@@ -6,3 +6,8 @@ This repository contains a collection of websites that I have built while learni
 -   Description: by building this amazing cat photo app I have learned how to use the most common HTML tags.
 -   Live Demo: [**Cat Photo App**](https://hixcoder.github.io/Cat-Photo-App/)
 -   Source Code: [**link**](https://github.com/hixcoder/Cat-Photo-App)
+
+## Cafe Menu
+-   Description: By designing this menu page for a cafe webpage l have learned some good things about CSS.
+-   Live Demo: [**Cafe Menu**](https://hixcoder.github.io/Cafe-Menu/)
+-   Source Code: [**link**](https://github.com/hixcoder/Cafe-Menu)
