@@ -16,3 +16,8 @@ This repository contains a collection of websites that I have built while learni
 -   Description: I learned different ways to set color values and how to pair colors with each other.
 -   Live Demo: [**Colored Markers**](https://hixcoder.github.io/Colored-Markers/)
 -   Source Code: [**link**](https://github.com/hixcoder/Colored-Markers)
+
+## Registration Form
+-   Description: I learned many things about HTML forms by building this signup page.
+-   Live Demo: [**Registration Form**](https://hixcoder.github.io/Registration-Form/)
+-   Source Code: [**link**](https://github.com/hixcoder/Registration-Form/tree/main)
