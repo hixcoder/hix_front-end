@@ -11,3 +11,8 @@ This repository contains a collection of websites that I have built while learni
 -   Description: By designing this menu page for a cafe webpage l have learned some good things about CSS.
 -   Live Demo: [**Cafe Menu**](https://hixcoder.github.io/Cafe-Menu/)
 -   Source Code: [**link**](https://github.com/hixcoder/Cafe-Menu)
+
+## Colored Markers
+-   Description: I learned different ways to set color values and how to pair colors with each other.
+-   Live Demo: [**Colored Markers**](https://hixcoder.github.io/Colored-Markers/)
+-   Source Code: [**link**](https://github.com/hixcoder/Colored-Markers)
