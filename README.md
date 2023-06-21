@@ -21,3 +21,8 @@ This repository contains a collection of websites that I have built while learni
 -   Description: I learned many things about HTML forms by building this signup page.
 -   Live Demo: [**Registration Form**](https://hixcoder.github.io/Registration-Form/)
 -   Source Code: [**link**](https://github.com/hixcoder/Registration-Form/tree/main)
+
+## Survey Form
+-   Description: I build this survey form only to practice what I learned untill now in html and css.
+-   Live Demo: [**Survey Form**](https://hixcoder.github.io/Survey-Form/)
+-   Source Code: [**link**](https://github.com/hixcoder/Survey-Form/tree/main)
