@@ -102,10 +102,7 @@ body {
   outline: 1px solid hsl(200, 100%, 50%);
 }
 
-.list li label:hover::before {
-  background: hsl(215, 100%, 80%);
-}
-
-.list li:has(input:checked) label:hover::before {
-  background: hsl(348, 100%, 30%);
+.list li label input[type="checkbox"]:checked + .kk {
+  color: hsla(200, 68%, 55%, 0.676);
+  text-decoration: line-through;
 }
