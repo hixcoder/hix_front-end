@@ -8,7 +8,6 @@ export default function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
   const [myColor, setMyColor] = useState("#B93A95");
-  const myColor1 = "#B93A95";
 
   function getRandomQuote() {
     const quotes = [
@@ -52,30 +51,30 @@ export default function App() {
   }
 
   function getRandomColor() {
-    const letters = "0123456789ABCDEF";
+    const letters = "9123456789ABCDE6";
     let color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     setMyColor(color);
-    // return color;
   }
 
   return (
     <div
-      className={`flex flex-col items-center justify-center h-screen bg-[#2274d2]`}
+      style={{ backgroundColor: myColor }}
+      className={`flex flex-col items-center justify-center h-screen transition-colors duration-1000 ease-in-out`}
     >
       <div
         id="quote-box"
         className="flex flex-col justify-center w-[32rem]  bg-white rounded-md p-4"
       >
-        <Quote quote={quote} author={author} />
+        <Quote quote={quote} author={author} color={myColor} />
 
         <div className="flex flex-row mt-8">
-          <SocialBtn id="tweet-quote">
+          <SocialBtn id="tweet-quote" color={myColor}>
             <FaTwitter />
           </SocialBtn>
-          <SocialBtn id="tweet-quote">
+          <SocialBtn id="tweet-quote" color={myColor}>
             <FaLinkedinIn />
           </SocialBtn>
 
@@ -84,11 +83,12 @@ export default function App() {
               onClick={() => {
                 getRandomQuote();
                 getRandomColor();
-
-                console.log("bg-[" + myColor + "]");
               }}
               id="new-quote"
-              className={"bg-[#2274d2] rounded-md  p-2 text-white"}
+              className={
+                "rounded-md  p-2 text-white  transition-colors duration-1000 ease-in-out"
+              }
+              style={{ backgroundColor: myColor }}
             >
               New Quote
             </button>
