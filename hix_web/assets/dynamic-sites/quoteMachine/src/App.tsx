@@ -5,6 +5,11 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 
 export default function App() {
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+  const [myColor, setMyColor] = useState("#B93A95");
+  const myColor1 = "#B93A95";
+
   function getRandomQuote() {
     const quotes = [
       ["Education costs money. But then so does ignorance.", "Sir Claus Moser"],
@@ -46,13 +51,23 @@ export default function App() {
     setAuthor(quotes[random][1]);
   }
 
-  const [quote, setQuote] = useState("xxxxxx");
-  const [author, setAuthor] = useState("x1");
+  function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    setMyColor(color);
+    // return color;
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-green-400">
+    <div
+      className={`flex flex-col items-center justify-center h-screen bg-[#2274d2]`}
+    >
       <div
         id="quote-box"
-        className="flex flex-col justify-center w-6/12  bg-white rounded-md p-4"
+        className="flex flex-col justify-center w-[32rem]  bg-white rounded-md p-4"
       >
         <Quote quote={quote} author={author} />
 
@@ -68,9 +83,12 @@ export default function App() {
             <button
               onClick={() => {
                 getRandomQuote();
+                getRandomColor();
+
+                console.log("bg-[" + myColor + "]");
               }}
               id="new-quote"
-              className="bg-green-400 rounded-md  p-2 text-white"
+              className={"bg-[#2274d2] rounded-md  p-2 text-white"}
             >
               New Quote
             </button>
