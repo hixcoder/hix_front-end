@@ -1,7 +1,7 @@
 import { AiOutlineFullscreenExit } from "react-icons/ai";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import { IconContext } from "react-icons";
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler } from "react";
 
 export default function (props: {
   handleTextChange: ChangeEventHandler<HTMLTextAreaElement> | undefined;
