@@ -1,12 +1,18 @@
-import { AiOutlineFullscreen } from "react-icons/ai";
+import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import { IconContext } from "react-icons";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import MarkdownPreviewer from "./MarkdownPreviewer";
 
-export default function (props: { text: string; visibility: string }) {
+export default function (props: {
+  text: string;
+  isFull: number[];
+  toggleFullscreen: () => void;
+}) {
   return (
     <div
-      className={`flex flex-col w-2/3 max-w-2xl border-[1.5px] bg-[] border-black rounded-t-lg bg-green-400 shadow-sm ${props.visibility}`}
+      id="preview"
+      className={`flex flex-col w-3/4 max-w-3xl border-[1.5px] border-black rounded-t-lg bg-green-400 shadow-sm ${
+        props.isFull[1] == -1 ? "hidden" : "visible"
+      }`}
     >
       <div className="flex flex-row items-center  p-2">
         <img className="h-5 w-5 mr-2" src="/icon.png" alt="icon" />
@@ -18,15 +24,15 @@ export default function (props: { text: string; visibility: string }) {
             size: "24",
           }}
         >
-          <AiOutlineFullscreen />
+          {props.isFull[1] == 1 ? (
+            <AiOutlineFullscreenExit onClick={props.toggleFullscreen} />
+          ) : (
+            <AiOutlineFullscreen onClick={props.toggleFullscreen} />
+          )}
         </IconContext.Provider>
       </div>
 
-      <ReactMarkdown
-        className="p-1 bg-slate-100 overflow-x-scroll"
-        remarkPlugins={[remarkGfm]}
-        children={props.text}
-      />
+      <MarkdownPreviewer markdownText={props.text} isFull={props.isFull} />
     </div>
   );
 }
