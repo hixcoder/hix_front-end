@@ -1,12 +1,13 @@
 import { useState } from "react";
-import Key from "./components/Key";
+import DrumPad from "./components/DrumPad";
 import { Slider } from "@/components/ui/slider";
 import Toogle from "./components/Toogle";
 
 function App() {
   const keysList = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
-  const [controlText, setControlText] = useState<string>("Initial Value");
+  const [controlText, setControlText] = useState<string>("Power ON");
   const [isPower, setIsPower] = useState(true);
+  const [volume, setVolume] = useState(50);
 
   // Define a function to update the ControlText
   const updateControlText = (newValue: string) => {
@@ -16,6 +17,11 @@ function App() {
   // Define a function to update the ControlText
   const updateIsPower = () => {
     isPower ? setIsPower(false) : setIsPower(true);
+  };
+
+  const handleVolumeChange = (newValue: number[]) => {
+    setVolume(newValue[0]);
+    setControlText("Volume: " + newValue[0]);
   };
 
   return (
@@ -35,13 +41,13 @@ function App() {
             {/* this is the keys */}
             <div className="grid grid-rows-3 grid-flow-col gap-2 m-4 w-1/2 h-4/5">
               {keysList.map((element, i) => (
-                <Key
+                <DrumPad
                   id={i}
                   key={i}
                   keyc={element}
                   isPower={isPower}
                   size="20"
-                  // audioUrl={audioList[i][1]}
+                  volume={volume}
                   updateControlText={updateControlText} // onClicked={setIndex(i)}
                 />
               ))}
@@ -62,16 +68,11 @@ function App() {
               </p>
               <Slider
                 className="py-4 w-40"
-                defaultValue={[50]}
+                defaultValue={[volume]}
+                min={0}
                 max={100}
                 step={1}
-              />
-              <Toogle
-                title="Bank"
-                onClick={function (): {} {
-                  throw new Error("Function not implemented.");
-                }}
-                isChecked={false}
+                onValueChange={handleVolumeChange}
               />
             </div>
           </div>
