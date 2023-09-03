@@ -44,8 +44,6 @@ export default function App() {
   const [myColor, setMyColor] = useState("#B93A95");
 
   function getRandomQuote() {
-    
-
     let random = Math.floor(Math.random() * quotes.length);
     setQuote(quotes[random][0]);
     setAuthor(quotes[random][1]);
@@ -62,8 +60,8 @@ export default function App() {
 
   return (
     <div
-      style={{ backgroundColor: myColor }}
-      className={`flex flex-col items-center justify-center h-screen transition-colors duration-1000 ease-in-out`}
+      // style={{ backgroundColor: myColor }}
+      className={`flex flex-col items-center justify-center h-screen transition-colors duration-1000 ease-in-out bg-[${myColor}]`}
     >
       <div
         id="quote-box"
@@ -72,13 +70,18 @@ export default function App() {
         <Quote quote={quote} author={author} color={myColor} />
 
         <div className="flex flex-row mt-8">
-          <SocialBtn id="tweet-quote" color={myColor} href={`https://twitter.com/intent/tweet?text="${quote}"%0A - ${author}`}>
+          <SocialBtn
+            id="tweet-quote"
+            color={myColor}
+            href={`https://twitter.com/intent/tweet?text="${quote}"%0A - ${author}`}
+          >
             <FaTwitter />
           </SocialBtn>
-          <SocialBtn id="tweet-quote" color={myColor} href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=best_quotes&caption=${author}&content=${quote}.&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`}>
-
-
-            
+          <SocialBtn
+            id="tweet-quote"
+            color={myColor}
+            href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=best_quotes&caption=${author}&content=${quote}.&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`}
+          >
             <FaTumblr />
           </SocialBtn>
 
