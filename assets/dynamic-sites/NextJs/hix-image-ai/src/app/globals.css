@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #0F172A;
+}
+
+.nav-link{
+  padding: 5px 16px;
+  margin: 5px 20px ;
+
+  
+}
+
+.nav-link:hover{
+  margin: 5px 20px ;
+  background-color: white;
+  color: #1E293B;
+  padding: 5px 16px;
+
+  border-radius: 20px;
+  
+}
