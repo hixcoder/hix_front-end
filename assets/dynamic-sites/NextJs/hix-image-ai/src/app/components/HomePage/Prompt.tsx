@@ -4,7 +4,7 @@ import RadioLabel from "./RadioLabel";
 
 export default function Prompt() {
   return (
-    <div className="flex flex-col items-left w-3/5 h-4/5 bg-slate-50 p-6 rounded-lg">
+    <div className="flex flex-col items-left w-3/5 h-fit bg-slate-50 p-6 rounded-lg">
       <div className="mb-5">
         <label className="text-sm mt-2 text-gray-900  font-medium">
           Prompt
@@ -16,11 +16,7 @@ export default function Prompt() {
           rows={4}
         ></textarea>
       </div>
-      <RadioLabel labelName="Choose Model">
-        <HixRadio id="v4" name="model" />
-        <HixRadio id="niji V4" name="model" />
-      </RadioLabel>
-      <RadioLabel labelName="Choose Model">
+      <RadioLabel labelName="Aspect Ratio">
         <HixRadio id="Square(1:1)" name="aspectRatio" />
         <HixRadio id="Mobile Vertical(9:16)" name="aspectRatio" />
         <HixRadio id="Widescreen(16:9)" name="aspectRatio" />
@@ -28,7 +24,7 @@ export default function Prompt() {
         <HixRadio id="Landscape(4:3)" name="aspectRatio" />
       </RadioLabel>
 
-      <button className="bg-blue-500 w-fit text-white px-8 py-3 border-2 border-transparent rounded-md text-md my-5 shadow-[0_0_10px_1px_rgba(59,130,246,0.5)]  animate-bounce hover:animate-none">
+      <button className="bg-blue-600 hover:bg-blue-500 w-fit text-white px-8 py-3 border-2 border-transparent rounded-md text-md my-5 hover:shadow-[0_0_10px_1px_rgba(59,130,246,0.5)]  animate-bounce hover:animate-none">
         Generate{" "}
       </button>
     </div>

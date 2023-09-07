@@ -43,17 +43,3 @@ body {
 
   border-radius: 8px;
 }
-
-/* In your CSS file or Tailwind configuration */
-@keyframes bounce-2s-fade-in-infinite {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-}
