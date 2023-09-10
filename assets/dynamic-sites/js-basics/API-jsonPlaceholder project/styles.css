@@ -1,5 +1,14 @@
+:root {
+  --bg-color: #405580;
+  --first-color: #4d69a2;
+  --second-color: #6082c5;
+  --shadow-color: #242d3e;
+  --shadow2-color: #47597b92;
+  --shadow3-color: #ffffff;
+}
+
 body {
-  background-color: rgb(245, 240, 220);
+  background-color: var(--bg-color);
 }
 
 #main {
@@ -14,21 +23,35 @@ body {
   margin-right: 16px;
 }
 
-.user-item {
+[class^="user-item"] {
+  cursor: pointer;
   border: solid 3px transparent;
   margin: 8px;
   background-color: white;
-  padding: 0px 25px;
+  padding: 8px 22px;
   border-radius: 10px;
-  box-shadow: 0 0 2px rgb(193, 193, 159);
+  box-shadow: 0 0 3px var(--shadow-color);
 }
 
-.user-item:hover {
-  box-shadow: 0 0 4px rgb(188, 188, 78);
+[class^="user-item"]:hover {
+  box-shadow: 0 0 6px var(--shadow3-color);
 }
-.user-item:active {
-  border: 3px solid rgb(255, 208, 0);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.424);
+[class^="user-item"]:active {
+  box-shadow: 0 0 0px;
+  border: 3px solid var(--second-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.424);
+}
+
+[class^="user-item"] h4 {
+  color: var(--bg-color);
+  width: max-content;
+  margin: 0;
+  font-size: 1.1rem;
+}
+[class^="user-item"] p {
+  margin: 8px 0;
+  font-size: 0.8rem;
+  color: var(--first-color);
 }
 
 #posts-container {
@@ -46,5 +69,5 @@ body {
   background-color: white;
   padding: 0px 25px;
   border-radius: 10px;
-  box-shadow: 0 0 5px 1px rgba(193, 193, 159, 0.492);
+  box-shadow: 0 0 5px 1px var(--shadow2-color);
 }
